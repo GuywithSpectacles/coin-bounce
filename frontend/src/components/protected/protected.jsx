@@ -7,7 +7,7 @@ function Protected({isAuth, children}) {
     }
     else {
         //if not logged in then we'll navigate the user to to login page
-        return <Navigate to="/log-in" />
+        return <Navigate to="/login" />
     }
 }
 

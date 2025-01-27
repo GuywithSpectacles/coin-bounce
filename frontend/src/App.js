@@ -5,9 +5,12 @@ import Home from "./pages/home/home";
 import styles from "./App.module.css";
 import Protected from "./components/protected/protected";
 import Error from "./pages/error/error";
+import Login from "./pages/login/login";
+import { useSelector } from "react-redux";
+import Signup from "./pages/signup/signup";
 
 function App() {
-  const isAuth = true;
+  const isAuth = useSelector((state) => state.user.auth);
   return (
     /* <> is a react fragment, to return only one component */
     <div className={styles.container}>
@@ -61,21 +64,21 @@ function App() {
             />
 
             <Route
-              path="log-in"
+              path="login"
               exact
               element={
                 <div className={styles.main}>
-                  <h1>Log In Page</h1>
+                  <Login />
                 </div>
               }
             />
 
             <Route
-              path="sign-up"
+              path="signup"
               exact
               element={
                 <div className={styles.main}>
-                  <h1>Sign Up Page</h1>
+                  <Signup />
                 </div>
               }
             />
